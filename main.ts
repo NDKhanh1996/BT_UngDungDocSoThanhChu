@@ -1,4 +1,4 @@
-import {handle} from "./src/handle";
+import {handle, result} from "./src/handle";
 
 const http = require('http')
 const fs = require('fs');
@@ -22,9 +22,10 @@ const server = http.createServer((req, res) => {
             dataInput += chunk;
         });
         req.on('end', () => {
-        fs.readFile('./views/input.html', "utf-8", (err, data) => {
+            fs.readFile('./views/input.html', "utf-8", (err, data) => {
                 res.writeHead(200, {'Content-Type': 'text/html'});
-                data = data.replace("none", handle.zeroToTen)
+                handle.allMethod();
+                data = data.replace("none", result);
                 res.write(data);
                 return res.end();
             });
