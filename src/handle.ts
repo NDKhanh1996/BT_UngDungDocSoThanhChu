@@ -1,6 +1,4 @@
 import {dataInput} from "../main";
-
-
 const qs = require('qs');
 
 export let handle = {
