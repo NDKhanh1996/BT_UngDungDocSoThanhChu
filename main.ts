@@ -1,4 +1,4 @@
-import {handle, result} from "./src/handle";
+import {handle} from "./src/handle";
 
 const http = require('http')
 const fs = require('fs');
@@ -21,6 +21,7 @@ const server = http.createServer((req, res) => {
         req.on('data', chunk => {
             dataInput = ''
             dataInput += chunk;
+            console.log(dataInput)
         });
         req.on('end', () => {
             fs.readFile('./views/input.html', "utf-8", (err, data) => {

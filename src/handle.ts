@@ -18,7 +18,8 @@ handle.allMethod = () => {
     if (+handle.getInputData().inputNumber >= 0 && +handle.getInputData().inputNumber <= 10) handle.zeroToTen();
     if (+handle.getInputData().inputNumber >= 11 && +handle.getInputData().inputNumber <= 19) handle.elevenToNineteen();
     if (+handle.getInputData().inputNumber >= 20 && +handle.getInputData().inputNumber <= 99) handle.twentyOneToOneHundred();
-    if (+handle.getInputData().inputNumber >= 100 && +handle.getInputData().inputNumber <= 109 && +handle.getInputData().inputNumber >= 119 && +handle.getInputData().inputNumber <= 999) handle.threeDigit();
+    if (+handle.getInputData().inputNumber >= 100 && +handle.getInputData().inputNumber <= 109) handle.threeDigit();
+    if (+handle.getInputData().inputNumber >= 119 && +handle.getInputData().inputNumber <= 999) handle.threeDigit();
     if (+handle.getInputData().inputNumber >= 110 && +handle.getInputData().inputNumber <= 119) handle.oneHundredAndElevenToOneHundredAndTwenty();
     return result;
 }
