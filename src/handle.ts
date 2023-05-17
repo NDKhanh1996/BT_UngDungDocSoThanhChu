@@ -20,10 +20,12 @@ handle.allMethod = () => {
     if (+handle.getInputData().inputNumber >= 20 && +handle.getInputData().inputNumber <= 99) handle.twentyOneToOneHundred();
     if (+handle.getInputData().inputNumber >= 100 && +handle.getInputData().inputNumber <= 109 && +handle.getInputData().inputNumber >= 119 && +handle.getInputData().inputNumber <= 999) handle.threeDigit();
     if (+handle.getInputData().inputNumber >= 110 && +handle.getInputData().inputNumber <= 119) handle.oneHundredAndElevenToOneHundredAndTwenty();
+    return result;
 }
 
 handle.getInputData = () => {
     return qs.parse(dataInput);
+
 }
 handle.zeroToTen = () => {
     switch (+handle.getInputData().inputNumber) {
@@ -160,6 +162,9 @@ handle.twentyOneToOneHundred = () => {
 handle.oneHundredAndElevenToOneHundredAndTwenty = () => {
     let result2 = '';
     switch (+handle.getInputData().inputNumber[2]) {
+        case 0:
+            result2 = 'ten';
+            break;
         case 1:
             result2 = 'eleven';
             break;
@@ -197,31 +202,31 @@ handle.threeDigit = () => {
     let result2 = '';
     switch (+handle.getInputData().inputNumber[0]){
         case 1:
-            result0 = 'one hundred and '
+            result0 = 'one hundred '
             break
         case 2:
-            result0 = 'two hundred and ';
+            result0 = 'two hundred ';
             break;
         case 3:
-            result0 = 'three hundred and ';
+            result0 = 'three hundred ';
             break;
         case 4:
-            result0 = 'four hundred and ';
+            result0 = 'four hundred ';
             break;
         case 5:
-            result0 = 'five hundred and ';
+            result0 = 'five hundred ';
             break;
         case 6:
-            result0 = 'six hundred and ';
+            result0 = 'six hundred ';
             break;
         case 7:
-            result0 = 'seven hundred and ';
+            result0 = 'seven hundred ';
             break;
         case 8:
-            result0 = 'eight hundred and ';
+            result0 = 'eight hundred ';
             break;
         case 9:
-            result0 = 'nine hundred and ';
+            result0 = 'nine hundred ';
             break;
     }
     switch (+handle.getInputData().inputNumber[1]) {
@@ -229,31 +234,31 @@ handle.threeDigit = () => {
             result1 = ''
             break;
         case 1:
-            result1 = 'ten '
+            result1 = 'and ten '
             break;
         case 2:
-            result1 = 'twenty ';
+            result1 = 'and twenty ';
             break;
         case 3:
-            result1 = 'thirty ';
+            result1 = 'and thirty ';
             break;
         case 4:
-            result1 = 'forty ';
+            result1 = 'and forty ';
             break;
         case 5:
-            result1 = 'fifty ';
+            result1 = 'and fifty ';
             break;
         case 6:
-            result1 = 'sixty ';
+            result1 = 'and sixty ';
             break;
         case 7:
-            result1 = 'seventy ';
+            result1 = 'and seventy ';
             break;
         case 8:
-            result1 = 'eighty ';
+            result1 = 'and eighty ';
             break;
         case 9:
-            result1 = 'ninety ';
+            result1 = 'and ninety ';
             break;
     }
     switch (+handle.getInputData().inputNumber[2]) {

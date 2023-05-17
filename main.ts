@@ -19,13 +19,13 @@ const server = http.createServer((req, res) => {
         })
     } else {
         req.on('data', chunk => {
+            dataInput = ''
             dataInput += chunk;
         });
         req.on('end', () => {
             fs.readFile('./views/input.html', "utf-8", (err, data) => {
                 res.writeHead(200, {'Content-Type': 'text/html'});
-                handle.allMethod();
-                data = data.replace("none", result);
+                data = data.replace("none", handle.allMethod());
                 res.write(data);
                 return res.end();
             });
